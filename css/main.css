@@ -16,15 +16,31 @@ ul {
 	margin: 0;
 }
 
+h1, h2, h3 {
+	font-weight: lighter;
+}
+
 .container {
 	height: 100%;
 }
 
 .forecast-list {
 	text-align: center;
+}
+
+.page {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+.day-detail {
+	color: white;
+	max-width: 65rem;
+	margin: auto;
+	font-weight: light;
+	margin-bottom: 4rem;
+	line-height: 1.6;
 }
 
 .day {
@@ -32,6 +48,7 @@ ul {
 	padding: 1rem 2.25rem;
 	background-color: #E5E5E5;
 	display: inline-block;
+	position: relative;
 	text-align: center;
 	font-weight: bold;
 	transition: transform .25s ease, background-color .4s ease;
@@ -40,6 +57,25 @@ ul {
 .day:hover {
 	transform: translate3D(0, -1.3rem, 0);
 	background-color: white;
+}
+
+.day.is-selected {
+	background-color: white; 
+}
+
+.day:after {
+	content: '';
+	position: absolute;
+	top: -6px;
+	left: -6px;
+	bottom: -6px;
+	right: -6px;
+	transition: border .2s ease-out;
+	border: 0px solid white;
+}
+
+.day.is-selected:after {
+	border: 3px solid white;
 }
 
 .day__icon {
